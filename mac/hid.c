@@ -722,7 +722,7 @@ hid_device * HID_API_EXPORT hid_open_path(const char *path)
 		char str[32];
 
 		/* Create the buffers for receiving data */
-		dev->max_input_report_len = (CFIndex) get_max_report_length(dev->device_handle);
+		dev->max_input_report_len = 64;
 		dev->input_report_buf = calloc(dev->max_input_report_len, sizeof(uint8_t));
 
 		/* Create the Run Loop Mode for this device.
